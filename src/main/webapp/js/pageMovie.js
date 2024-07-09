@@ -80,7 +80,13 @@ function llamarApiVideos(id, idiomaMovie) {
     .then(data => data.results.find(video => video.type == 'Trailer'))
     .then(video => {console.log(video==null); return video})
     //si encuentra el trailer en españo o no lo encuentra, busca en ingles
-    .then(video => {video!=null?crearTrailerMovie(video.key):llamarApiVideos(id,idioma.ingles)})   
+    .then(video => {
+        if (video != null) {
+            crearTrailerMovie(video.key)
+        }else if(idiomaMovie != idioma.ingles) {
+            llamarApiVideos(id,idioma.ingles)
+        }
+    })   
 
 }
 llamarApi(sessionStorage.getItem('idMovie'))
