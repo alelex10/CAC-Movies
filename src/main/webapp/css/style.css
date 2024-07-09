@@ -545,13 +545,12 @@ footer nav ul li a {
 }
 
 
-/* Pagina de la pelicula */
+/* ---------------- Pagina de la pelicula ----------------*/
 /* Section de peliculas */
 main .bannerMovie {
   font-weight: 600;
   min-height: 90vh;
 }
-
 .bannerMovie .banner-background {
   padding-top: 50px;
   position: relative;
@@ -630,29 +629,27 @@ main .bannerMovie {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   color: #fff;
-  height: 70vh;
-}
+  padding-bottom: 4rem;
 
-.trailer h2 {
-  margin-bottom: 20px;
-}
+  .trailer h2 {
+    margin-bottom: 20px;
+  }
+  .trailer{
+    width: 100%;
 
-.video-container {
-  position: relative;
-  width: 40vw;
-  padding-bottom: 56.25%; 
-  height: 40vh;
+  }
+  .video-container {
+    width: 100%;
+  }
+  
 }
-
-.video-container iframe {
-  position: absolute;
-  width: inherit;
-  height: inherit;
+iframe{
+  width: 100%;
+  height: 85vh;
 }
-
 .info-trailer {
   text-align: center;
   margin-bottom: 0.5rem;
@@ -715,7 +712,24 @@ main .bannerMovie {
   .video-container {
     width: 100%;
     max-width: none;
-    padding-bottom: 56.25%;
     margin-bottom: 20px;
+    iframe{
+      width: 100%;
+      height: 50vh;
+    }
   }
 }
+@media (max-width: 768px) {
+  .section-dos{
+   width: 100%;
+  }
+  .video-container {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 20px;
+    iframe{
+      width: 100%;
+      height: 40vh;
+    }
+  }
+ }
