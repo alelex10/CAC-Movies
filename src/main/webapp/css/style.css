@@ -685,6 +685,19 @@ iframe{
 
 /* ------------ */
 /* Pagina de la pelicula para celu */
+
+@media (min-width:1500px) {
+  iframe{
+    height: 60dvh;
+  }
+}
+
+@media (min-width:1001px) {
+  iframe{
+    height: 50vh;
+  }
+}
+
 @media (max-width: 1000px) {
   .bannerMovie {
     height: initial;
@@ -715,7 +728,7 @@ iframe{
     margin-bottom: 20px;
     iframe{
       width: 100%;
-      height: 50vh;
+      height: 40dvh;
     }
   }
 }
@@ -725,11 +738,12 @@ iframe{
   }
   .video-container {
     width: 100%;
-    max-width: none;
+    max-width: auto;
     margin-bottom: 20px;
     iframe{
-      width: 100%;
-      height: 40vh;
+      margin: auto 20px;
+      width: 90%;
+      height: 30dvh;
     }
   }
  }
