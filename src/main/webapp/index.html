@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CDN AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
     <title>C & D - Movies</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -23,7 +28,7 @@
                 <!-- <li><a href="./pages/gestionUsuarios.html">gestion usuarios</a></li> -->
             </ul>
         </nav>
-        
+
     </header>
     <main id="inicio">
         <!-- Banner -->
@@ -40,19 +45,20 @@
             <div class="input-btn">
                 <input type="search" class="search" placeholder="Buscar...">
                 <button>Buscar</button>
-            </div>    
+            </div>
         </div>
         <!-- Tendencias -->
         <div class="cartelera" id="tendencias">
             <hr class="hr">
-            <h3>Las tendencias</h3>        
+            <h3>Las tendencias</h3>
             <div class="peliculas">
-                <!-- <div class="peli">
-                    <img src="./img/peli.jpeg" alt="img peli">
+            <!--<a href="pages/pageMovie.html" id="${obj.id}" class="peli" data-aos="fade-up">
+                    <img src="https://image.tmdb.org/t/p/w500/${obj.poster_path}" alt="${obj.title}">
                     <div class="overlay">
-                        <div class="texto">Para ver más contenido <br>registrate</div>
+                        <input class="btn btn-primary guardarDB" type="button" value="guardar en DB">
+                        <div class="texto">${obj.title}</div>
                     </div>
-                </div>  -->
+                </a> -->
             </div>
             <button class="btn-ant">Anterior</button>
             <button class="btn-sig">Siguiente</button>
@@ -82,12 +88,17 @@
             </ul>
         </nav>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="./js/app.js" ></script>
+    <script src="./js/app.js"></script>
+    <!-- JS AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- INITIALIZE AOS -->
     <script>
         AOS.init();
     </script>
 </body>
+
 </html>

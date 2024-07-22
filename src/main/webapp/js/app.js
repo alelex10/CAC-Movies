@@ -1,5 +1,6 @@
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMDIxMTk5OGEwMWIxMGM1MDk5OGE1YTBkODI3NzI0MSIsInN1YiI6IjY2NTczNjFjODZjYzJiNzJkZjFjZjI5MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3SxeWj4H5Sfe_B2MkiY2fXzXNeFH02UDlH3XVo5N-qI';
 const API_URL = 'https://api.themoviedb.org/3';
+const MY_URL_APY = 'https://localhost/GestionPeliculasServlet';
 
 let currentPage = 1;
 
@@ -24,9 +25,11 @@ function dibujarDatos(json) {
 }
 
 function pelicula(obj) {
-    return `<a href="pages/pageMovie.html" id="${obj.id}" class="peli" data-aos="fade-up">
-        <img src="https://image.tmdb.org/t/p/w500/${obj.poster_path}" alt="${obj.title}">
+    return `
+        <a href="pages/pageMovie.html" id="${obj.id}" class="peli" data-aos="fade-up">
+            <img src="https://image.tmdb.org/t/p/w500/${obj.poster_path}" alt="${obj.title}">
             <div class="overlay">
+                <input class="btn btn-primary guardarDB" type="button" value="guardar en DB">
                 <div class="texto">${obj.title}</div>
             </div>
         </a>`;
@@ -79,12 +82,37 @@ function peliculaAclamada(obj) {
         </a>`;
 }
 
-aclamadasApi();
-
 function getIDCard() {
     const pelis = document.querySelectorAll('.peli')
     pelis.forEach(peli => peli.addEventListener('click', () => {
         /* le paso el id de la pelicula para usarlo en el pageMovie.js */
-        sessionStorage.setItem('idMovie',peli.id)
+        sessionStorage.setItem('idMovie', peli.id)
     }))
 }
+//evento del elemento btn para guardar peliculas en la base de datos
+document.querySelectorAll('.guardarDB').addEventListener('click', (event) => {
+    //btn clickeado
+    const btn = event.target;
+    const objPelicula = getPelicula(btn);
+})
+//guardar pelicula en DB
+function guardarPeliculaDB(pelicula) {
+    
+    fetch(MY_URL_APY, {
+      method: 'POST',
+      body: JSON.stringify(objetoToJson),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log('Petición enviada con éxito'))
+    .catch(error => console.log('Error al enviar la petición'));
+}
+//obtener datos de la pelicula de mis elementos HTML
+function getPelicula(btn) {
+    const id = btn.parentElement.parentElement.id;
+
+}
+
+aclamadasApi();

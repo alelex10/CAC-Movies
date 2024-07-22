@@ -6,9 +6,11 @@ import java.sql.SQLException;
 
 public class ConexionDB {
 
-    private static final String url = "jdbc:mysql://localhost:3306/comicion";
-    private static final String user = "root";
-    private static final String password = "";
+    private ConexionDB(){}
+
+    private static final String URL_DB = "jdbc:mysql://localhost:3306/comicion";
+    private static final String USER = "root";
+    private static final String PASSWORD = System.getenv("miPASSWORD");
 
     public static Connection obtenerConexion() throws SQLException {
         try {
@@ -17,7 +19,7 @@ public class ConexionDB {
         } catch (ClassNotFoundException e) {
             throw new SQLException("No se encontró el driver JDBC", e);
         }
-        return DriverManager.getConnection(url, user, password);
+        return DriverManager.getConnection(URL_DB, USER, PASSWORD);
     }
 
     //Prueba de conexion

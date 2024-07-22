@@ -1,6 +1,6 @@
 package controller;
 
-import dao.UserDao;
+import modelo.usuario.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

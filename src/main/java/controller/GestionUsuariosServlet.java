@@ -1,8 +1,8 @@
 package controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dao.UsuarioDAO;
-import modelo.Usuario;
+import modelo.usuario.UsuarioDAO;
+import modelo.usuario.Usuario;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

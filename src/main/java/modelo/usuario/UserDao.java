@@ -1,4 +1,4 @@
-package dao;
+package modelo.usuario;
 
 import conexion.ConexionDB;
 
